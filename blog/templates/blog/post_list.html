@@ -10,7 +10,15 @@
         <h1><a href="/">Stan's Blog</a></h1>
     </header>
 
-    <article>
+    {% for post in posts %}
+        <article>
+            <time datetime="">published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr}}</p>
+        </article>
+    {% endfor %}
+
+    <!-- <article>
         <time datetime="2024-07-20T15:05:20">published: 20.07.2024, 15:05</time>
         <h2><a href="">My first post</a></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sunt repellendus hic facere nemo eveniet iusto, est corrupti voluptatem suscipit?</p>
@@ -20,7 +28,7 @@
         <time datetime="2024-07-19T18:30:43">published: 19.07.2024, 18:30</time>
         <h2><a href="">My second post</a></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sunt repellendus hic facere nemo eveniet iusto, est corrupti voluptatem suscipit?</p>
-    </article>
+    </article> -->
 
 </body>
 </html>
